@@ -1,0 +1,10 @@
+#
+#Tue Jan 14 23:01:14 SGT 2020
+default.Pack.dfplocation=C\:\\Program Files (x86)\\Microchip\\MPLABX\\v5.30\\packs\\Microchip\\PIC18Fxxxx_DFP\\1.1.19
+default.languagetoolchain.dir=C\:\\Program Files (x86)\\Microchip\\xc8\\v1.34\\bin
+configurations-xml=83c05e97ca3f4167b58fe6c90d893fcb
+com-microchip-mplab-nbide-embedded-makeproject-MakeProject.md5=7cd2eead2ea6964989cbf02efe721a76
+default.languagetoolchain.version=1.34
+host.platform=windows
+conf.ids=default
+default.com-microchip-mplab-nbide-toolchainXC8-XC8LanguageToolchain.md5=f87389d82b4b299d292110931953ebdc

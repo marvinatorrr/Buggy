@@ -1,0 +1,678 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/debug\buggyv1.X.debug.obj
+cinit CODE 0 90A 90A 16 1
+text0 CODE 0 C6 C6 266 1
+text1 CODE 0 7F0 7F0 44 1
+text2 CODE 0 834 834 2A 1
+text3 CODE 0 920 920 10 1
+text4 CODE 0 8D8 8D8 1A 1
+text5 CODE 0 930 930 E 1
+text6 CODE 0 85E 85E 2A 1
+text7 CODE 0 888 888 2A 1
+text8 CODE 0 8F2 8F2 18 1
+text9 CODE 0 8B2 8B2 26 1
+text10 CODE 0 5E8 5E8 E6 1
+text11 CODE 0 4F0 4F0 F8 1
+text12 CODE 0 32C 32C 1C4 1
+text13 CODE 0 6CE 6CE C6 1
+text14 CODE 0 794 794 5C 1
+cstackCOMRAM COMRAM 1 1 1 47 1
+intcode CODE 0 8 8 BA 1
+bssCOMRAM COMRAM 1 48 48 E 1
+$C:\Users\M\AppData\Local\Temp\shk.obj
+idloc IDLOC 0 200000 200000 8 1
+reset_vec CODE 0 0 0 6 1
+end_init CODE 0 C2 C2 4 1
+config CONFIG 0 300000 300000 E 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 80-F3 1
+SFR F80-F9B 1
+SFR F9D-FD3 1
+SFR FD5-FDA 1
+SFR FE0-FE2 1
+SFR FE8-FEA 1
+SFR FF0-FFC 1
+BANK0 80-F3 1
+CONST 6-7 1
+CONST 93E-E3F 1
+STACK 80-F3 1
+SMALLCONST 93E-E3F 1
+CODE 6-7 1
+CODE 93E-E3F 1
+BIGRAM 56-F3 1
+COMRAM 56-7F 1
+EEDATA F00000-F000FF 1
+MEDIUMCONST 93E-E3F 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/debug\buggyv1.X.debug.obj
+8 intcode CODE >4427:C:\Program Files (x86)\Microchip\xc8\v1.34\include\pic18f1220.h
+8 intcode CODE >30:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+40 intcode CODE >32:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+44 intcode CODE >34:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+48 intcode CODE >38:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+4A intcode CODE >39:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+50 intcode CODE >42:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+5E intcode CODE >44:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+62 intcode CODE >46:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+7C intcode CODE >48:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+7E intcode CODE >49:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+88 intcode CODE >51:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+C6 text0 CODE >74:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+C6 text0 CODE >76:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+CA text0 CODE >77:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+CE text0 CODE >78:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+D2 text0 CODE >79:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+D6 text0 CODE >81:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+DA text0 CODE >85:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+E8 text0 CODE >86:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+F6 text0 CODE >88:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+11A text0 CODE >90:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+11E text0 CODE >91:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+13E text0 CODE >92:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+19A text0 CODE >93:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+1F6 text0 CODE >94:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+1FA text0 CODE >95:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+1FC text0 CODE >97:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+220 text0 CODE >99:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+224 text0 CODE >100:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+240 text0 CODE >101:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+29C text0 CODE >102:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+2F8 text0 CODE >103:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+2FC text0 CODE >104:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+2FE text0 CODE >106:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+316 text0 CODE >108:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+31A text0 CODE >111:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+31E text0 CODE >112:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+326 text0 CODE >83:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+328 text0 CODE >115:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+32C text12 CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+32C text12 CODE >90:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+340 text12 CODE >91:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+354 text12 CODE >92:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+370 text12 CODE >93:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+37E text12 CODE >94:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+39A text12 CODE >95:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+3A8 text12 CODE >96:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+3AC text12 CODE >97:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+3B0 text12 CODE >98:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+3B4 text12 CODE >99:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+3B6 text12 CODE >100:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+3B8 text12 CODE >101:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+3BA text12 CODE >102:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+3C6 text12 CODE >103:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+3C8 text12 CODE >104:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+3D4 text12 CODE >106:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+3DC text12 CODE >110:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+3E4 text12 CODE >111:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+3E6 text12 CODE >112:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+3FE text12 CODE >113:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+400 text12 CODE >114:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+408 text12 CODE >115:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+40C text12 CODE >113:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+416 text12 CODE >117:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+420 text12 CODE >121:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+428 text12 CODE >122:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+42A text12 CODE >123:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+442 text12 CODE >124:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+444 text12 CODE >125:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+44C text12 CODE >126:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+450 text12 CODE >124:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+45C text12 CODE >129:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+460 text12 CODE >131:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+46C text12 CODE >132:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+478 text12 CODE >133:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+478 text12 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+47C text12 CODE >136:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+488 text12 CODE >137:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+496 text12 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+49A text12 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+4A6 text12 CODE >141:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+4AA text12 CODE >142:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+4B6 text12 CODE >143:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+4C2 text12 CODE >144:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+4C8 text12 CODE >146:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+4EE text12 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftadd.c
+4F0 text11 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+4F0 text11 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+50A text11 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+50E text11 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+528 text11 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+536 text11 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+53C text11 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+540 text11 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+544 text11 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+548 text11 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+54A text11 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+54C text11 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+558 text11 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+564 text11 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+56A text11 CODE >136:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+56E text11 CODE >137:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+57C text11 CODE >138:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+584 text11 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+58C text11 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+592 text11 CODE >143:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+598 text11 CODE >145:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+59C text11 CODE >146:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+5AA text11 CODE >147:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+5B2 text11 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+5BA text11 CODE >149:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+5C0 text11 CODE >156:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+5E6 text11 CODE >157:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\ftmul.c
+5E8 text10 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+5E8 text10 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+602 text10 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+606 text10 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+62C text10 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+62E text10 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+63A text10 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+648 text10 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+64C text10 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+650 text10 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+65A text10 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+660 text10 CODE >60:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+66A text10 CODE >61:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+66E text10 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+670 text10 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+676 text10 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+688 text10 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+68A text10 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+694 text10 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+698 text10 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+6A2 text10 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+6A8 text10 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+6BA text10 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+6CC text10 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\fttol.c
+6CE text13 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+6CE text13 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+6DE text13 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+6EC text13 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+6EE text13 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+6F0 text13 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+6FA text13 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+718 text13 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+71A text13 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+71C text13 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+728 text13 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+732 text13 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+750 text13 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+752 text13 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+754 text13 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+75E text13 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+76A text13 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+76E text13 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+772 text13 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+776 text13 CODE >82:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+77A text13 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+780 text13 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+784 text13 CODE >85:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+792 text13 CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\float.c
+794 text14 CODE >55:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+796 text14 CODE >57:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+798 text14 CODE >59:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+798 text14 CODE >60:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+79E text14 CODE >61:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+7A0 text14 CODE >63:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+7A8 text14 CODE >66:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+7AA text14 CODE >57:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+7B8 text14 CODE >66:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+7B8 text14 CODE >68:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+7BA text14 CODE >70:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+7C0 text14 CODE >71:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+7EE text14 CODE >72:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+7F0 text1 CODE >152:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+7F0 text1 CODE >154:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+7F6 text1 CODE >156:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+7FA text1 CODE >158:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+808 text1 CODE >160:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+80C text1 CODE >162:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+81E text1 CODE >164:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+822 text1 CODE >166:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+82C text1 CODE >168:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+830 text1 CODE >170:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+834 text2 CODE >194:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+834 text2 CODE >196:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+83C text2 CODE >198:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+840 text2 CODE >199:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+844 text2 CODE >200:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+84C text2 CODE >203:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+854 text2 CODE >204:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+858 text2 CODE >205:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+85C text2 CODE >207:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+85E text6 CODE >121:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+85E text6 CODE >123:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+862 text6 CODE >125:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+866 text6 CODE >126:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+868 text6 CODE >127:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+86E text6 CODE >128:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+870 text6 CODE >130:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+874 text6 CODE >132:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+876 text6 CODE >133:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+87E text6 CODE >134:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+886 text6 CODE >135:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+888 text7 CODE >209:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+888 text7 CODE >211:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+890 text7 CODE >213:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+894 text7 CODE >214:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+898 text7 CODE >215:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+89E text7 CODE >216:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+8A6 text7 CODE >217:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+8B0 text7 CODE >219:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+8B2 text9 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwtoft.c
+8B2 text9 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwtoft.c
+8D6 text9 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\common\lwtoft.c
+8D8 text4 CODE >137:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+8D8 text4 CODE >139:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+8E0 text4 CODE >141:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+8E2 text4 CODE >142:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+8E4 text4 CODE >143:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+8E6 text4 CODE >144:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+8E8 text4 CODE >146:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+8EA text4 CODE >147:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+8EC text4 CODE >148:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+8EE text4 CODE >149:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+8F0 text4 CODE >150:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+8F2 text8 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
+8F4 text8 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
+902 text8 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
+908 text8 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.34\sources\pic18\d10ktcyx.c
+90A cinit CODE >488:C:\Users\M\AppData\Local\Temp\shk.
+90A cinit CODE >490:C:\Users\M\AppData\Local\Temp\shk.
+90A cinit CODE >493:C:\Users\M\AppData\Local\Temp\shk.
+90A cinit CODE >519:C:\Users\M\AppData\Local\Temp\shk.
+90E cinit CODE >520:C:\Users\M\AppData\Local\Temp\shk.
+910 cinit CODE >521:C:\Users\M\AppData\Local\Temp\shk.
+910 cinit CODE >522:C:\Users\M\AppData\Local\Temp\shk.
+912 cinit CODE >523:C:\Users\M\AppData\Local\Temp\shk.
+914 cinit CODE >524:C:\Users\M\AppData\Local\Temp\shk.
+916 cinit CODE >530:C:\Users\M\AppData\Local\Temp\shk.
+916 cinit CODE >532:C:\Users\M\AppData\Local\Temp\shk.
+918 cinit CODE >533:C:\Users\M\AppData\Local\Temp\shk.
+91A cinit CODE >534:C:\Users\M\AppData\Local\Temp\shk.
+91C cinit CODE >535:C:\Users\M\AppData\Local\Temp\shk.
+920 text3 CODE >172:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+920 text3 CODE >174:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+922 text3 CODE >175:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+924 text3 CODE >176:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+926 text3 CODE >177:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+928 text3 CODE >178:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+92A text3 CODE >179:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+92C text3 CODE >180:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+92E text3 CODE >183:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+930 text5 CODE >185:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+930 text5 CODE >187:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+934 text5 CODE >190:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+938 text5 CODE >191:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+93C text5 CODE >192:C:\Users\M\Desktop\MPLABXProjects\buggyv1.X\buggyv1.c
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\buggyv1.X.debug.obj
+__Hspace_0 30000E 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Hspace_1 56 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Hspace_2 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__CFG_IESO$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+_count_on 50 0 COMRAM 1 bssCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__size_of_init_ADC 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__size_of_init_PWM 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__end_of_reverse 85E 0 CODE 0 text2 dist/default/debug\buggyv1.X.debug.obj
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\buggyv1.X.debug.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\M\AppData\Local\Temp\shk.obj
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\buggyv1.X.debug.obj
+__Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\buggyv1.X.debug.obj
+_TMR0 FD6 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+___sp 0 0 STACK 2 stack C:\Users\M\AppData\Local\Temp\shk.obj
+_main C6 0 CODE 0 text0 dist/default/debug\buggyv1.X.debug.obj
+___ftadd@f1 1C 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+___ftadd@f2 1F 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+start C2 0 CODE 0 init C:\Users\M\AppData\Local\Temp\shk.obj
+__size_of___ftadd 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__size_of___ftmul 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__size_of___fttol 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__size_of_main 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__Hpowerup C2 0 CODE 0 powerup dist/default/debug\buggyv1.X.debug.obj
+__size_of_init_interrupttimer 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+_T0CONbits FD5 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__size_of_ADC_Read 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__accesstop 80 0 ABS 0 - C:\Users\M\AppData\Local\Temp\shk.obj
+intlevel0 0 0 CODE 0 text C:\Users\M\AppData\Local\Temp\shk.obj
+intlevel1 0 0 CODE 0 text C:\Users\M\AppData\Local\Temp\shk.obj
+intlevel2 0 0 CODE 0 text C:\Users\M\AppData\Local\Temp\shk.obj
+intlevel3 0 0 CODE 0 text C:\Users\M\AppData\Local\Temp\shk.obj
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\buggyv1.X.debug.obj
+_init_ADC 85E 0 CODE 0 text6 dist/default/debug\buggyv1.X.debug.obj
+_init_PWM 930 0 CODE 0 text5 dist/default/debug\buggyv1.X.debug.obj
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\buggyv1.X.debug.obj
+__CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Hifardata 0 0 CODE 0 ifardata dist/default/debug\buggyv1.X.debug.obj
+__Hclrtext 0 0 ABS 0 clrtext dist/default/debug\buggyv1.X.debug.obj
+__end_of_init_ADC 888 0 CODE 0 text6 dist/default/debug\buggyv1.X.debug.obj
+__end_of_init_PWM 93E 0 CODE 0 text5 dist/default/debug\buggyv1.X.debug.obj
+___ftmul@f1 28 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+___ftmul@f2 2B 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+_ADCON1 FC1 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+_ADRESH FC4 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+_ADRESL FC3 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+_Delay10KTCYx 8F2 0 CODE 0 text8 dist/default/debug\buggyv1.X.debug.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\M\AppData\Local\Temp\shk.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\M\AppData\Local\Temp\shk.obj
+_CCPR1L FBE 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/debug\buggyv1.X.debug.obj
+_init_interrupttimer 8D8 0 CODE 0 text4 dist/default/debug\buggyv1.X.debug.obj
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\buggyv1.X.debug.obj
+___fttol@f1 37 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\buggyv1.X.debug.obj
+__size_of_init_ports 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+_ADC_Read 794 0 CODE 0 text14 dist/default/debug\buggyv1.X.debug.obj
+__Hintcodelo C2 0 CODE 0 intcodelo dist/default/debug\buggyv1.X.debug.obj
+__size_of___ftpack 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__end_of___ftadd 4F0 0 CODE 0 text12 dist/default/debug\buggyv1.X.debug.obj
+__end_of___ftmul 5E8 0 CODE 0 text11 dist/default/debug\buggyv1.X.debug.obj
+__end_of___fttol 6CE 0 CODE 0 text10 dist/default/debug\buggyv1.X.debug.obj
+__end_of_ADC_Read 7F0 0 CODE 0 text14 dist/default/debug\buggyv1.X.debug.obj
+__size_of_Delay10KTCYx 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__CFG_FSCM$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__size_of___lwtoft 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Lintcodelo C2 0 CODE 0 intcodelo dist/default/debug\buggyv1.X.debug.obj
+ADC_Read@channel 17 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+start_initialization 90A 0 CODE 0 cinit dist/default/debug\buggyv1.X.debug.obj
+_OSCCON FD3 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\buggyv1.X.debug.obj
+_TRISAbits F92 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+_TRISBbits F93 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+___rparam_used 1 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__CFG_WDTPS$32768 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__end_of_Delay10KTCYx 90A 0 CODE 0 text8 dist/default/debug\buggyv1.X.debug.obj
+___fttol@exp1 45 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+___fttol@lval 41 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+___ftpack 6CE 0 CODE 0 text13 dist/default/debug\buggyv1.X.debug.obj
+_reverse 834 0 CODE 0 text2 dist/default/debug\buggyv1.X.debug.obj
+___ftpack@arg 11 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+___ftpack@exp 14 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__end_of___ftpack 794 0 CODE 0 text13 dist/default/debug\buggyv1.X.debug.obj
+__Hbank0 0 0 ABS 0 bank0 dist/default/debug\buggyv1.X.debug.obj
+__Hcinit 0 0 ABS 0 cinit dist/default/debug\buggyv1.X.debug.obj
+__Hconst 0 0 CODE 0 const dist/default/debug\buggyv1.X.debug.obj
+__Hidata 0 0 CODE 0 idata dist/default/debug\buggyv1.X.debug.obj
+__Hidloc 200008 0 IDLOC 0 idloc dist/default/debug\buggyv1.X.debug.obj
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/debug\buggyv1.X.debug.obj
+__Hparam 0 0 COMRAM 1 rparam dist/default/debug\buggyv1.X.debug.obj
+__Hrdata 0 0 COMRAM 1 rdata dist/default/debug\buggyv1.X.debug.obj
+__Hstack 0 0 STACK 2 stack dist/default/debug\buggyv1.X.debug.obj
+__Htext0 0 0 ABS 0 text0 dist/default/debug\buggyv1.X.debug.obj
+__Htext1 0 0 ABS 0 text1 dist/default/debug\buggyv1.X.debug.obj
+__Htext2 0 0 ABS 0 text2 dist/default/debug\buggyv1.X.debug.obj
+__Htext3 0 0 ABS 0 text3 dist/default/debug\buggyv1.X.debug.obj
+__Htext4 0 0 ABS 0 text4 dist/default/debug\buggyv1.X.debug.obj
+__Htext5 0 0 ABS 0 text5 dist/default/debug\buggyv1.X.debug.obj
+__Htext6 0 0 ABS 0 text6 dist/default/debug\buggyv1.X.debug.obj
+__Htext7 0 0 ABS 0 text7 dist/default/debug\buggyv1.X.debug.obj
+__Htext8 0 0 ABS 0 text8 dist/default/debug\buggyv1.X.debug.obj
+__Htext9 0 0 ABS 0 text9 dist/default/debug\buggyv1.X.debug.obj
+_count_off 4E 0 COMRAM 1 bssCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\buggyv1.X.debug.obj
+__Hbigram 0 0 ABS 0 bigram dist/default/debug\buggyv1.X.debug.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\M\AppData\Local\Temp\shk.obj
+__end_of_init_interrupttimer 8F2 0 CODE 0 text4 dist/default/debug\buggyv1.X.debug.obj
+__Hcomram 0 0 ABS 0 comram dist/default/debug\buggyv1.X.debug.obj
+__Hconfig 30000E 0 CONFIG 0 config dist/default/debug\buggyv1.X.debug.obj
+___lwtoft 8B2 0 CODE 0 text9 dist/default/debug\buggyv1.X.debug.obj
+__Lbank0 0 0 ABS 0 bank0 dist/default/debug\buggyv1.X.debug.obj
+__Lcinit 0 0 ABS 0 cinit dist/default/debug\buggyv1.X.debug.obj
+__Lconst 0 0 CODE 0 const dist/default/debug\buggyv1.X.debug.obj
+__Lidata 0 0 CODE 0 idata dist/default/debug\buggyv1.X.debug.obj
+__Lidloc 200000 0 IDLOC 0 idloc dist/default/debug\buggyv1.X.debug.obj
+___ftadd@exp1 27 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+___ftadd@exp2 26 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+___ftadd@sign 25 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/debug\buggyv1.X.debug.obj
+__Lparam 0 0 COMRAM 1 rparam dist/default/debug\buggyv1.X.debug.obj
+__Lrdata 0 0 COMRAM 1 rdata dist/default/debug\buggyv1.X.debug.obj
+__Lstack 0 0 STACK 2 stack dist/default/debug\buggyv1.X.debug.obj
+__Ltext0 0 0 ABS 0 text0 dist/default/debug\buggyv1.X.debug.obj
+__Ltext1 0 0 ABS 0 text1 dist/default/debug\buggyv1.X.debug.obj
+__Ltext2 0 0 ABS 0 text2 dist/default/debug\buggyv1.X.debug.obj
+__Ltext3 0 0 ABS 0 text3 dist/default/debug\buggyv1.X.debug.obj
+__Ltext4 0 0 ABS 0 text4 dist/default/debug\buggyv1.X.debug.obj
+__Ltext5 0 0 ABS 0 text5 dist/default/debug\buggyv1.X.debug.obj
+__Ltext6 0 0 ABS 0 text6 dist/default/debug\buggyv1.X.debug.obj
+__Ltext7 0 0 ABS 0 text7 dist/default/debug\buggyv1.X.debug.obj
+__Ltext8 0 0 ABS 0 text8 dist/default/debug\buggyv1.X.debug.obj
+__Ltext9 0 0 ABS 0 text9 dist/default/debug\buggyv1.X.debug.obj
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/debug\buggyv1.X.debug.obj
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/debug\buggyv1.X.debug.obj
+__end_of___lwtoft 8D8 0 CODE 0 text9 dist/default/debug\buggyv1.X.debug.obj
+_INTCONbits FF2 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Habs1 0 0 ABS 0 abs1 dist/default/debug\buggyv1.X.debug.obj
+__Hdata 0 0 ABS 0 data dist/default/debug\buggyv1.X.debug.obj
+__Hinit C2 0 CODE 0 init dist/default/debug\buggyv1.X.debug.obj
+__Hrbit 0 0 COMRAM 1 rbit dist/default/debug\buggyv1.X.debug.obj
+__Hrbss 0 0 COMRAM 1 rbss dist/default/debug\buggyv1.X.debug.obj
+__Htemp 0 0 COMRAM 1 temp dist/default/debug\buggyv1.X.debug.obj
+__Htext 0 0 ABS 0 text dist/default/debug\buggyv1.X.debug.obj
+__Labs1 0 0 ABS 0 abs1 dist/default/debug\buggyv1.X.debug.obj
+__Ldata 0 0 ABS 0 data dist/default/debug\buggyv1.X.debug.obj
+__Linit C2 0 CODE 0 init dist/default/debug\buggyv1.X.debug.obj
+__Lrbit 0 0 COMRAM 1 rbit dist/default/debug\buggyv1.X.debug.obj
+__Lrbss 0 0 COMRAM 1 rbss dist/default/debug\buggyv1.X.debug.obj
+__Ltemp 0 0 COMRAM 1 temp dist/default/debug\buggyv1.X.debug.obj
+__Ltext 0 0 ABS 0 text dist/default/debug\buggyv1.X.debug.obj
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__end_of_setDCmotorspeed 834 0 CODE 0 text1 dist/default/debug\buggyv1.X.debug.obj
+__Hintret 0 0 ABS 0 intret dist/default/debug\buggyv1.X.debug.obj
+__Hirdata 0 0 CODE 0 irdata dist/default/debug\buggyv1.X.debug.obj
+_ISR 8 0 CODE 0 intcode dist/default/debug\buggyv1.X.debug.obj
+_PR2 FCB 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__S0 30000E 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__S1 56 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__S2 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__CFG_OSC$INTIO2 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+?_ADC_Read 11 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+_forwardenable 888 0 CODE 0 text7 dist/default/debug\buggyv1.X.debug.obj
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\buggyv1.X.debug.obj
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/debug\buggyv1.X.debug.obj
+__end_of_ISR C2 0 CODE 0 intcode dist/default/debug\buggyv1.X.debug.obj
+_ADC_Result 48 0 COMRAM 1 bssCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__Lintentry 0 0 ABS 0 intentry dist/default/debug\buggyv1.X.debug.obj
+__Hramtop 100 0 RAM 0 ramtop dist/default/debug\buggyv1.X.debug.obj
+__Hrparam 0 0 COMRAM 1 rparam dist/default/debug\buggyv1.X.debug.obj
+__activetblptr 2 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Hstruct 0 0 COMRAM 1 struct dist/default/debug\buggyv1.X.debug.obj
+__Htext10 0 0 ABS 0 text10 dist/default/debug\buggyv1.X.debug.obj
+__Htext11 0 0 ABS 0 text11 dist/default/debug\buggyv1.X.debug.obj
+__Htext12 0 0 ABS 0 text12 dist/default/debug\buggyv1.X.debug.obj
+__Htext13 0 0 ABS 0 text13 dist/default/debug\buggyv1.X.debug.obj
+__Htext14 0 0 ABS 0 text14 dist/default/debug\buggyv1.X.debug.obj
+_setDCmotorspeed 7F0 0 CODE 0 text1 dist/default/debug\buggyv1.X.debug.obj
+__ptext10 5E8 0 CODE 0 text10 dist/default/debug\buggyv1.X.debug.obj
+__ptext11 4F0 0 CODE 0 text11 dist/default/debug\buggyv1.X.debug.obj
+__ptext12 32C 0 CODE 0 text12 dist/default/debug\buggyv1.X.debug.obj
+__ptext13 6CE 0 CODE 0 text13 dist/default/debug\buggyv1.X.debug.obj
+__ptext14 794 0 CODE 0 text14 dist/default/debug\buggyv1.X.debug.obj
+___ftadd 32C 0 CODE 0 text12 dist/default/debug\buggyv1.X.debug.obj
+___ftmul 4F0 0 CODE 0 text11 dist/default/debug\buggyv1.X.debug.obj
+___fttol 5E8 0 CODE 0 text10 dist/default/debug\buggyv1.X.debug.obj
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\buggyv1.X.debug.obj
+__Lbigram 0 0 ABS 0 bigram dist/default/debug\buggyv1.X.debug.obj
+__CFG_BOR$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+Delay10KTCYx@unit 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__Lcomram 0 0 ABS 0 comram dist/default/debug\buggyv1.X.debug.obj
+__Lconfig 300000 0 CONFIG 0 config dist/default/debug\buggyv1.X.debug.obj
+?___ftpack 11 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+_LATBbits F8A 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\buggyv1.X.debug.obj
+__Lfardata 0 0 FARRAM 0 fardata dist/default/debug\buggyv1.X.debug.obj
+___lwtoft@c 19 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+stackhi F3 0 ABS 0 - C:\Users\M\AppData\Local\Temp\shk.obj
+stacklo 80 0 ABS 0 - C:\Users\M\AppData\Local\Temp\shk.obj
+__Lintcode 8 0 CODE 0 intcode dist/default/debug\buggyv1.X.debug.obj
+__Lintret 0 0 ABS 0 intret dist/default/debug\buggyv1.X.debug.obj
+__Lirdata 0 0 CODE 0 irdata dist/default/debug\buggyv1.X.debug.obj
+?___lwtoft 19 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+_ADCON0bits FC2 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+_ADCON2bits FC0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Lspace_0 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Lspace_1 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Lspace_2 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+___ftmul@cntr 35 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__pbssCOMRAM 48 0 COMRAM 1 bssCOMRAM dist/default/debug\buggyv1.X.debug.obj
+___ftmul@sign 36 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+_PIR1bits F9E 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Lend_init C2 0 CODE 0 end_init dist/default/debug\buggyv1.X.debug.obj
+__size_of_forwardenable 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+end_of_initialization 916 0 CODE 0 cinit dist/default/debug\buggyv1.X.debug.obj
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\buggyv1.X.debug.obj
+__Hintentry 0 0 ABS 0 intentry dist/default/debug\buggyv1.X.debug.obj
+?___ftadd 1C 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+?___ftmul 28 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+?___fttol 37 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__Hreset_vec 6 0 CODE 0 reset_vec dist/default/debug\buggyv1.X.debug.obj
+__Lramtop 100 0 RAM 0 ramtop dist/default/debug\buggyv1.X.debug.obj
+__Lrparam 0 0 COMRAM 1 rparam dist/default/debug\buggyv1.X.debug.obj
+__pcinit 90A 0 CODE 0 cinit dist/default/debug\buggyv1.X.debug.obj
+__ptext0 C6 0 CODE 0 text0 dist/default/debug\buggyv1.X.debug.obj
+__ptext1 7F0 0 CODE 0 text1 dist/default/debug\buggyv1.X.debug.obj
+__ptext2 834 0 CODE 0 text2 dist/default/debug\buggyv1.X.debug.obj
+__ptext3 920 0 CODE 0 text3 dist/default/debug\buggyv1.X.debug.obj
+__ptext4 8D8 0 CODE 0 text4 dist/default/debug\buggyv1.X.debug.obj
+__ptext5 930 0 CODE 0 text5 dist/default/debug\buggyv1.X.debug.obj
+__ptext6 85E 0 CODE 0 text6 dist/default/debug\buggyv1.X.debug.obj
+__ptext7 888 0 CODE 0 text7 dist/default/debug\buggyv1.X.debug.obj
+__ptext8 8F2 0 CODE 0 text8 dist/default/debug\buggyv1.X.debug.obj
+__ptext9 8B2 0 CODE 0 text9 dist/default/debug\buggyv1.X.debug.obj
+__CFG_STVR$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Lstruct 0 0 COMRAM 1 struct dist/default/debug\buggyv1.X.debug.obj
+__Ltext10 0 0 ABS 0 text10 dist/default/debug\buggyv1.X.debug.obj
+__Ltext11 0 0 ABS 0 text11 dist/default/debug\buggyv1.X.debug.obj
+__Ltext12 0 0 ABS 0 text12 dist/default/debug\buggyv1.X.debug.obj
+__Ltext13 0 0 ABS 0 text13 dist/default/debug\buggyv1.X.debug.obj
+__Ltext14 0 0 ABS 0 text14 dist/default/debug\buggyv1.X.debug.obj
+__size_of_setDCmotorspeed 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__ramtop 100 0 RAM 0 ramtop C:\Users\M\AppData\Local\Temp\shk.obj
+__end_of_forwardenable 8B2 0 CODE 0 text7 dist/default/debug\buggyv1.X.debug.obj
+__Lpowerup C2 0 CODE 0 powerup dist/default/debug\buggyv1.X.debug.obj
+_init_ports 920 0 CODE 0 text3 dist/default/debug\buggyv1.X.debug.obj
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\buggyv1.X.debug.obj
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\buggyv1.X.debug.obj
+___param_bank 10 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__CFG_WDT$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\buggyv1.X.debug.obj
+___ftmul@exp 31 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__end_of__initialization 916 0 CODE 0 cinit dist/default/debug\buggyv1.X.debug.obj
+__size_of_reverse 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__CFG_WRT0$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__CFG_WRT1$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__CFG_WRTB$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Libigdata 0 0 CODE 0 ibigdata dist/default/debug\buggyv1.X.debug.obj
+__CFG_WRTC$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__CFG_WRTD$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Lclrtext 0 0 ABS 0 clrtext dist/default/debug\buggyv1.X.debug.obj
+___ftpack@sign 15 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__CFG_PWRT$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+_forward_flag 54 0 COMRAM 1 bssCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__Hend_init C6 0 CODE 0 end_init dist/default/debug\buggyv1.X.debug.obj
+__end_of_main 32C 0 CODE 0 text0 dist/default/debug\buggyv1.X.debug.obj
+__pintcode 8 0 CODE 0 intcode dist/default/debug\buggyv1.X.debug.obj
+_T2CON FCA 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+_TMR0L FD6 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__CFG_CP0$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__CFG_CP1$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__HRAM 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Hbss 0 0 RAM 1 bss dist/default/debug\buggyv1.X.debug.obj
+__Hram 0 0 ABS 0 ram dist/default/debug\buggyv1.X.debug.obj
+__Hsfr 0 0 ABS 0 sfr dist/default/debug\buggyv1.X.debug.obj
+__LRAM 1 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Lbss 0 0 RAM 1 bss dist/default/debug\buggyv1.X.debug.obj
+__Lram 0 0 ABS 0 ram dist/default/debug\buggyv1.X.debug.obj
+__Lsfr 0 0 ABS 0 sfr dist/default/debug\buggyv1.X.debug.obj
+_count 4C 0 COMRAM 1 bssCOMRAM dist/default/debug\buggyv1.X.debug.obj
+_error 52 0 COMRAM 1 bssCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__CFG_CPB$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__end_of_init_ports 930 0 CODE 0 text3 dist/default/debug\buggyv1.X.debug.obj
+_CCP1CON FBD 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+___fttol@sign1 40 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+__size_of_ISR 0 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__initialization 90A 0 CODE 0 cinit dist/default/debug\buggyv1.X.debug.obj
+_T2CONbits FCA 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Hfardata 0 0 FARRAM 0 fardata dist/default/debug\buggyv1.X.debug.obj
+__Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\buggyv1.X.debug.obj
+__Lifardata 0 0 CODE 0 ifardata dist/default/debug\buggyv1.X.debug.obj
+_CCP1CONbits FBD 0 ABS 0 - dist/default/debug\buggyv1.X.debug.obj
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\buggyv1.X.debug.obj
+__Hintcode C2 0 CODE 0 intcode dist/default/debug\buggyv1.X.debug.obj
+___ftmul@f3_as_product 32 0 COMRAM 1 cstackCOMRAM dist/default/debug\buggyv1.X.debug.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+idloc 0 200000 200000 8 1
+cstackCOMRAM 1 1 1 55 1
+reset_vec 0 0 0 6 1
+intcode 0 8 8 936 1
+config 0 300000 300000 E 1
