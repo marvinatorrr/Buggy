@@ -1,14 +1,14 @@
-/* 
- * File:   buggyv1.c
- * Author: Marvin
+/*
+ * File:   buggyv2.c
+ * Author: M
  *
- * Created on January 14, 2020, 5:42 PM
+ * Created on March 12, 2020, 11:17 AM
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include "buggyv1.h"
+#include "buggyv2.h"
 /*
  * 
  */
@@ -23,9 +23,44 @@ void init_ADC(void);
 void init_PWM(void);
 void init_interrupttimer(void);
 void init_ports(void);
-void setDCmotorspeed(void);
+void setDCmotorspeed(int abs_error);
 void reverse(void);
 void forwardenable(void);
+void TaylorSpeedControl(int error);
+
+
+int current_position;
+int target_position = 0;
+int piderror;
+int integral;
+int derivative;
+int last_error;
+int pid;
+
+float kp = 1.4;
+float ki = 0.05;
+float kd = 2;
+
+
+int pidCalc(int error)
+{
+    integral = integral + error;
+    derivative = error - last_error;
+    // Integral Wind Up Reset 
+    // Resets integral to 0 if error crosses 0
+    if (last_error * error < 0) 
+    {
+        integral = 0;
+    }
+    pid = (kp * error) + (kd * derivative) + (ki * integral);
+    //kp - faster response but overshoot
+    //ki - reduce steady state error
+    //kd - minimize overshoot
+    last_error = error;
+
+    return(constrain(pid, -1023 ,1023)); //constrain from -1023 to 1023
+}
+
 
 void interrupt ISR()
 {
@@ -39,11 +74,13 @@ void interrupt ISR()
         count++;//every increment takes 0.05ms
     }
     
-    if(count == count_off) //off time, desired time/0.05ms
+    //left 5%, center 7.5%, right 10%
+    
+    if(count == 400 - count_on) //off time, desired time/0.05ms
     {
         LATBbits.LATB0=1;
     }
-    if(count == count_off + count_on) //on time, desired time/0.05ms
+    if(count == 400) //on time, desired time/0.05ms
     {
         LATBbits.LATB0=0;
         count=0;
@@ -51,7 +88,7 @@ void interrupt ISR()
 }
 
 uint16_t ADC_Result[2];
-uint16_t error;
+uint16_t error = 0;
 uint16_t ADC_Read(uint8_t channel)
 {
     switch(channel)
@@ -79,35 +116,30 @@ void main(void) {
     init_PWM();
     
     T2CONbits.TMR2ON = 1; //start timer
-    
-        while(1)
+    LATBbits.LATB1 = 1; //on g_en
+            
+    while(1)
     {
         ADC_Result[0] = ADC_Read(0);
         ADC_Result[1] = ADC_Read(1); //0-1023
         
-        if((ADC_Result[0] >= ADC_Result[1]) && (ADC_Result[0] > 200) && (ADC_Result[1] > 200))
-        {
-            forwardenable();
-            error = ADC_Result[0] - ADC_Result[1];
-            count_off = (error + 37851.0) * 0.009775171;
-            count_on = (error - 3069.0) * -0.009775171;   
-            setDCmotorspeed();
-        }
+        error = ADC_Result[1] - ADC_Result[0]; // +ve Right | -ve Left  
+        count_on = pidCalc(error) * 0.0333 + 30;   
+        setDCmotorspeed(abs(error));
+        //TaylorSpeedControl(error);
         
-        else if(ADC_Result[0] < ADC_Result[1] && (ADC_Result[0] > 200) && (ADC_Result[1] > 200))
-        {
-            forwardenable();
-            error= ADC_Result[1] - ADC_Result[0];
-            count_off = (error - 37851.0) * -0.009775171;
-            count_on = (error + 3069.0) * 0.009775171;
-            setDCmotorspeed();
-        }
-        
-        else if(ADC_Result[0] < 200 && ADC_Result[1] < 200)
-        {
-            reverse();
-        }
-        
+//        while(ADC_Result[0] <= 390 && ADC_Result[1] <= 390)
+//        {
+//            ADC_Result[0] = ADC_Read(0);
+//            ADC_Result[1] = ADC_Read(1); //0-1023
+//            reverse();
+//        }
+//        
+//        if(forward_flag == 0)
+//        {
+//            forwardenable();
+//        }
+            
         PIR1bits.TMR2IF = 0;
         while(PIR1bits.TMR2IF == 0);
     }
@@ -149,23 +181,27 @@ void init_interrupttimer(void)
     T0CONbits.T0CS = 0; //internal instruction cycle clock
 }
 
-void setDCmotorspeed(void)
-{
-            if(error <= 200)
+void setDCmotorspeed(int abs_error)
+{           
+            if(abs_error > 270)
             {
-                CCPR1L = 200;
+                CCPR1L = 31;
             }
-            else if((error > 200) && (error <= 400))
+            else if((abs_error > 230) && (abs_error <= 270))
             {
-                CCPR1L = 150;
+                CCPR1L = 35;
             }
-            else if((error > 400) && (error <= 600))
+            else if((abs_error > 190) && (abs_error <= 230))
             {
-                CCPR1L = 100;
+                CCPR1L = 36;
             }
-            else if((error > 600) && (error <= 1100))
+            else if((abs_error > 150) && (abs_error <= 190))
             {
-                CCPR1L = 50;
+                CCPR1L = 40;
+            }
+            else if(abs_error <= 150)
+            {
+                CCPR1L = 49;
             }
 }
 
@@ -178,8 +214,10 @@ void init_ports(void)
     TRISBbits.RB0 = 0; //set as output (servo)
     TRISAbits.RA0 = 1; //analog left
     TRISAbits.RA1 = 1; //analog right
-
+    TRISBbits.RB1 = 0; //output global enable
     
+    
+    TRISAbits.RA2 = 0; //test remove
 }
 
 void init_PWM(void)
@@ -202,18 +240,24 @@ void reverse(void)
     
     forward_flag = 0; //disable flag
     CCP1CONbits.P1M = 0b11; //reverse mode p1b pwm, p1c control signal
-    CCPR1L = 62; //feed pwm
-    
+    CCPR1L = 33; //feed pwm
 }
 
 void forwardenable()
 {
-    if(forward_flag == 0)
-    {
     CCPR1L = 0; //turn off mosfets
     CCP1CONbits.P1M = 0b00;
     Delay10KTCYx(10); 
     CCP1CONbits.P1M = 0b01; //forward mode p1d pwm, p1a control signal
     forward_flag = 1; //enable flag
-    }
+}
+
+void TaylorSpeedControl(int error)
+{
+    float speed;
+    float errorRad;
+    errorRad = 0.005 * error;
+    errorRad = float_constrain(errorRad, -1.54, 1.54);
+    speed = 0.245 * (1 - (0.025 * (errorRad * errorRad)));
+    CCPR1L = speed * 200;
 }
